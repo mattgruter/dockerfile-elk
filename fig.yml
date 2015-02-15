@@ -1,0 +1,18 @@
+elasticsearch:
+  image: elasticsearch
+  expose:
+    - "9200"
+
+logstash:
+  build: logstash
+  links:
+    - elasticsearch
+  ports:
+    - "4560:4560"
+
+kibana:
+  build: kibana
+  links:
+    - elasticsearch
+  ports:
+    - "8080"
