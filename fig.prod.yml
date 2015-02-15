@@ -11,7 +11,7 @@ logstash:
     - "4560:4560"
 
 kibana:
-  build: mattgruter/kibana
+  image: mattgruter/kibana
   links:
     - elasticsearch
   ports:
